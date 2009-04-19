@@ -8,9 +8,13 @@ class Field
   end
   
   def ==(other)
-    f = EqualsFilter.new query.clazz
+    f = EqualsFilter.new
     f.left = self
     f.right = other
     return f
+  end
+  
+  def to_s
+    "#{query}.#{name}"
   end
 end
