@@ -1,4 +1,4 @@
-class Query < Base
+class Query
   attr_accessor :clazz
 
   def initialize(clazz)
@@ -9,7 +9,13 @@ class Query < Base
     clazz.to_s
   end
   
-  def method_missing(name, *args)
-    Field.new self, name
+  def get_column_name(attribute)
+    clazz.columns_hash.fetch(attribute)
   end
+
+  private
+    def method_missing(name, *args)
+      Field.new self, name
+    end
+ 
 end

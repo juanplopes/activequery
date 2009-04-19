@@ -7,11 +7,12 @@ class Field
     @name = name
   end
   
-  def ==(other)
-    f = EqualsFilter.new
-    f.left = self
-    f.right = other
-    return f
+  def eq(other)
+    EqualsFilter.new self, other
+  end
+
+  def neq(other)
+    NotEqualsFilter.new self, other
   end
   
   def to_s

@@ -1,10 +1,8 @@
 require 'rubygems'
 require 'activerecord'
+require "#{File.dirname(__FILE__)}/filelist"
 
 module ActiveQuery
-  $LOAD_PATH << "#{File.dirname(__FILE__)}";
-  require "requires"
-
   def self.included(base)
     base.extend ClassMethods
   end
