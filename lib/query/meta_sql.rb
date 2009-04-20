@@ -3,7 +3,7 @@ class MetaSQL
   attr_accessor :parameters
 
   def initialize(sql, parameters)
-    @sql = sql;
+    @sql = sql
     @parameters = parameters
   end
   

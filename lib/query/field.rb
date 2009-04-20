@@ -11,6 +11,10 @@ class Field
     EqualsFilter.new self, other
   end
 
+  def ==(other)
+    eq(other)
+  end
+
   def neq(other)
     NotEqualsFilter.new self, other
   end
