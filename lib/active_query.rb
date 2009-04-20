@@ -11,7 +11,3 @@ end
 class ActiveRecord::Base
   include ActiveQuery
 end
-
-class String
-  include ActiveQuery
-end

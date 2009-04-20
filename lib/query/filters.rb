@@ -1,11 +1,23 @@
 class EqualsFilter < BinaryOperator
-  def to_sql
-    "#{left} = #{right}"
+  def op_type 
+    "="
   end
 end
 
 class NotEqualsFilter < BinaryOperator
-  def to_sql
-    "#{left} <> #{right}"
+  def op_type 
+    "<>"
+  end
+end
+
+class AndVertex < BinaryOperator
+  def op_type 
+    "AND"
+  end
+end
+
+class OrVertex < BinaryOperator
+  def op_type 
+    "OR"
   end
 end

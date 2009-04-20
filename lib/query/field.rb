@@ -16,6 +16,10 @@ class Field
   end
   
   def to_s
-    "#{query}.#{name}"
+    "#{query.query_alias}.#{name}"
+  end
+  
+  def to_meta
+    MetaSQL.new self.to_s, []
   end
 end
